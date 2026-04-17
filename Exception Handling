@@ -1,0 +1,71 @@
+#Exception Handling
+#try-catch
+class Outer {
+    class Inner {
+        void show() {
+            System.out.println("Inner class");
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer o = new Outer();
+        Outer.Inner i = o.new Inner();
+        i.show();
+    }
+}
+
+# Multiple-catch
+class MultipleCatch {
+    public static void main(String[] args) {
+        try {
+            int arr[] = new int[5];
+            arr[10] = 50;
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Error");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index Error");
+        }
+    }
+}
+
+#Final block 
+class FinallyBlock {
+    public static void main(String[] args) {
+        try {
+            int a = 5 / 0;
+        } catch (Exception e) {
+            System.out.println("Exception caught");
+        } finally {
+            System.out.println("Finally always executes");
+        }
+    }
+}
+
+#User defined exception
+class MyException extends Exception {
+    MyException(String msg) {
+        super(msg);
+    }
+}
+
+class CustomException {
+    public static void main(String[] args) {
+        try {
+            throw new MyException("Custom Error");
+        } catch (MyException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+#NULL pointer exception
+class NullPointerDemo {
+    public static void main(String[] args) {
+        String s = null;
+        try {
+            System.out.println(s.length());
+        } catch (NullPointerException e) {
+            System.out.println("Null Pointer Exception");
+        }
+    }
+}
