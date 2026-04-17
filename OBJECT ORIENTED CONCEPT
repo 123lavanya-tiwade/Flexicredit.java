@@ -1,0 +1,115 @@
+# Need of object oriented approach
+class Car {
+    String brand;
+    int speed;
+
+    void display() {
+        System.out.println(brand + " " + speed);
+    }
+
+    public static void main(String[] args) {
+        Car c1 = new Car();
+        c1.brand = "BMW";
+        c1.speed = 120;
+        c1.display();
+    }
+}
+
+# object and class 
+class Student {
+    String name;
+
+    void show() {
+        System.out.println("Name: " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student(); // object
+        s.name = "Lavanya";
+        s.show();
+    }
+}
+
+# Abstraction
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.draw();
+    }
+}
+
+#Inheritance
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+    }
+}
+
+# Encapsulation 
+class Account {
+    private int balance;
+
+    void setBalance(int b) {
+        balance = b;
+    }
+
+    int getBalance() {
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        Account a = new Account();
+        a.setBalance(5000);
+        System.out.println(a.getBalance());
+    }
+}
+
+#polymorphism(method overloading)
+class Demo {
+    void add(int a, int b) {
+        System.out.println(a + b);
+    }
+
+    void add(int a, int b, int c) {
+        System.out.println(a + b + c);
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.add(2,3);
+        d.add(1,2,3);
+    }
+}
+
+#(Method overriding)
+class A {
+    void show() {
+        System.out.println("Parent");
+    }
+}
+
+class B extends A {
+    void show() {
+        System.out.println("Child");
+    }
+
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.show();
+    }
+}
